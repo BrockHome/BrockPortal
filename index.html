@@ -1,313 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-cn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>布鲁克大学导航</title>
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href=" css/iconfont.css">
-    <!--<link rel="stylesheet" href="../plug-in/normalize.css">-->
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>BU 导航</title>
+<meta name="keywords" content="布鲁克大学导航,Brock,BrockU,BrockHome"/>
+<meta name="description" content="布鲁克大学导航"/>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+
+<link href="https://krunk.cn/krunk/sdk/ZUI/css/zui.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href=" css/style.css">
+<link rel="stylesheet" href=" css/iconfont.css">
+<link rel="stylesheet" href=" css/fontawesome.css">
+
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#c00">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
 </head>
-
-<body>
-    <div class="container" id="container">
-        <aside class="left-bar" id="leftBar">
-            <div class="title">
-                <p>布鲁克大学导航</p>
+<body id="nav_body">
+<!-- Header Nav -->
+<header>
+<div class="main">
+    <h1 class="logo">
+    <a href="index.php">
+    <img src="favicon.ico" >
+    <span style="color: black;">Brock University 导航</span>
+    </a>
+    </h1>
+    <!-- Top Nav -->
+    <nav class="nav">
+    <ul>
+        <li><a href="https://lms.brocku.ca/" target="_blank">Sakai</a></li>
+        <li><a href="https://my.brocku.ca/" target="_blank">My Brock</a></li>
+    </ul>
+    </nav>
+    <!-- Menu for Mobile -->
+    <button class="nav-btn visible-xs visible-sm"><span class="icon-line top"></span><span class="icon-line middle"></span><span class="icon-line bottom"></span>
+    </button>
+</div>
+</header>
+<div id="content">
+    <!-- Left Bar -->
+    <div class="left-bar">
+        <div class="header">
+            <h2>分类导航</h2>
+        </div>
+        <div class="menu" id="menu">
+            <ul class="scrollcontent">
+                <!-- Left Nav -->
+                <li><a href="#BrockU" class="active">Brock University</a></li>
+                <li><a href="#MyBrock">My Brock</a></li>
+                <li><a href="#Library">图书馆</a></li>
+                <li><a href="#Official">官网页面</a></li>
+                <li><a href="#Tools">实用工具</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="main">
+        <div class="container content-box">
+            <!-- Search -->
+            <section class="sousuo">
+            <div class="search">
+                <div class="search-box">
+                    <button class="search-engine-name" id="search-engine-name">Brock Search</button>
+                    <input type="text" id="txt" class="search-input" placeholder="Google/Brock Search/Library Omni"/>
+                    <button class="search-btn" id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+                <!-- Engine  -->
+                <div class="search-engine">
+                    <div class="search-engine-head">
+                        <strong class="search-engine-tit">选择搜索方式：</strong>
+                    </div>
+                    <ul class="search-engine-list">
+                    </ul>
+                </div>
             </div>
-            <nav class="nav">
-                <div class="item active"><a href=""><i class="iconfont icon-daohang2"></i>快捷导航</a><i class="line"></i></div>
-                <ul class="nav-item" id="navItem">
-                    <!--<li><a href="#network" class="active"><i class="iconfont icon-shequ"></i>网络管理</a></li>
-                    <li><a href="#smarthome"><i class="iconfont icon-blogger"></i>智能家庭</a></li>
-                    <li><a href="#serverman"><i class="iconfont icon-wendangdocument78"></i>服务器管理</a></li>
-					<li><a href="#brocku" class="active"><i class="iconfont icon-shequ"></i>Brock</a></li>
-                    <li><a href="#mybrock"><i class="iconfont icon-blogger"></i>My Brock</a></li>
-                    <li><a href="#library"><i class="iconfont icon-wendangdocument78"></i>图书馆</a></li>-->
-					<li class="1"><a href="https://lms.brocku.ca/" class="active"><i class="iconfont icon-shequ"></i>Sakai</a></li>
-					<li class="1"><a href="https://my.brocku.ca" class="active"><i class="iconfont icon-shequ"></i>My Brock</a></li>
-					<li class="1"><a href="" class="active"><i class=""></i></a></li>
-					<li class="1"><a href="https://brockhome.ca" class="active"><i class="iconfont icon-shequ"></i>BrockHome</a></li>
-					<li class="1"><a href="https://bucssa.ca" class="active"><i class="iconfont icon-shequ"></i>BUCSSA</a></li>
-                    <li class="download"><a href="https://download.brockhome.ca"><i class="iconfont icon-shequ"></i>下载客户端</a></li>
-                </ul>
-                <div class="item comment"><a target="_blank" href="mailto:webmaster@krunk.cn"><i class="iconfont icon-liuyan"></i>反馈</a></div>
-            </nav>
-        </aside>
-        <section class="main">
-            <div id="mainContent">
-                <!-- 手机端菜单 -->
-                <div id="menu-box">
-                   <div id="menu">
-                       <input type="checkbox" id="menu-form">
-                       <label for="menu-form" class="menu-spin">
-                        <div class="line diagonal line-1"></div>
-                        <div class="line horizontal"></div>
-                        <div class="line diagonal line-2"></div>
-                      </label>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="box">
-                    <a href="#" name="brocku"></a>
-                    <div class="sub-category">
-                        <div><i class="iconfont icon-blogger"></i>Brock University</div>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://lms.brocku.ca/">
-                            <div class="item">
-                                <div class="no-logo">Sakai</div>
-                                <div class="desc">Brock的学习管理系统</div>
-                            </div>
-                        </a>
-                        
-						
-						<a target="_blank" href="https://card.brocku.ca/">
-                            <div class="item">
-                                <div class="no-logo">学生卡充值与管理</div>
-                                <div class="desc">充值后可在学校餐馆刷学生卡支付</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://adfs.brocku.ca/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline&wctx=bk%3D1406747354%26LoginOptions%3D3">
-                            <div class="item">
-                                <div class="no-logo">学生邮箱与Office Online</div>
-                                <div class="desc">学校提供的Office 365</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://brocku.ca/careers/">
-                            <div class="item">
-                                <div class="no-logo">Career Zone</div>
-                                <div class="desc">在学校找工作职位</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://experiencebu.brocku.ca/">
-                            <div class="item">
-                                <div class="no-logo">ExperienceBu</div>
-                                <div class="desc">学生活动与组织</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-				<div class="box">
-                    <a href="#" name="mybrock"></a>
-                    <div class="sub-category">
-                        <div><i class="iconfont icon-blogger"></i>My Brock - https://my.brocku.ca</div>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://my.brocku.ca/">
-                            <div class="item">
-                                <div class="no-logo">My Brock</div>
-                                <div class="desc">My Brock Portal</div>
-                            </div>
-                        </a>
-                        <a target="_blank" href="https://my.brocku.ca/BrockDB/reg_Declaration.aspx">
-                            <div class="item">
-                                <div class="no-logo">选课</div>
-                                <div class="desc">每年选课时间表详见BUCSSA公众号</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/BrockDB/reg_CourseMarkInquiry.aspx">
-                            <div class="item">
-                                <div class="no-logo">当前成绩</div>
-                                <div class="desc">在课程结束后即可查看，平时成绩在Sakai中查看</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/BrockDB/reg_StudentCourseLocations.aspx">
-                            <div class="item">
-                                <div class="no-logo">课程时间表</div>
-                                <div class="desc">选课后的课程表</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/BrockDB/fin_StudentFinancialHistory.aspx">
-                            <div class="item">
-                                <div class="no-logo">学费单</div>
-                                <div class="desc">即将要支付的学费以及已经支付的学费记录</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/BrockDB/gnrl_Course_ExamTimetable.aspx">
-                            <div class="item">
-                                <div class="no-logo">考试时间</div>
-                                <div class="desc">你的考试时间表</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://brocku.ca/webcal/">
-                            <div class="item">
-                                <div class="no-logo">课程日历</div>
-                                <div class="desc">Course Calendars - 选课时使用</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/portal/MySettings.aspx">
-                            <div class="item">
-                                <div class="no-logo">修改密码</div>
-                                <div class="desc">每三个月会强制要求修改一次密码，不能与之前的密码重复</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://my.brocku.ca/BrockDB/xplus_studentExperiences_new.aspx">
-                            <div class="item">
-                                <div class="no-logo">学生经历</div>
-                                <div class="desc">志愿者小时，校内工作等记录</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="box">
-                    <a href="#" name="library"></a>
-                    <div class="sub-category">
-                        <div><i class="iconfont icon-shequ"></i>图书馆</div>
-                    </div>
-                    <div>
-                        <a target="_blank" href="https://brocku.ca/library/">
-                            <div class="item">
-                                <div class="no-logo">SuperSearch</div>
-                                <div class="desc">图书馆搜索引擎</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://calendar.library.brocku.ca/reserve/groupstudy">
-                            <div class="item">
-                                <div class="no-logo">小组学习房间预约</div>
-                                <div class="desc">预约图书馆讨论室</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!--  -->
-                <div class="box">
-                    <a href="" name="brockuwebsite"></a>
-                    <div class="sub-category">
-                        <div><i class="iconfont icon-wendangdocument78"></i>官网页面 - https://brocku.ca/</div>
-                    </div>
-                    <div>
-						<a target="_blank" href="https://brocku.ca/">
-                            <div class="item">
-                                <div class="no-logo">Brock官网</div>
-                                <div class="desc">布鲁克大学官网</div>
-                            </div>
-                        </a>
-                        <a target="_blank" href="https://brocku.ca/important-dates">
-                            <div class="item">
-                                <div class="no-logo">重要日期</div>
-                                <div class="desc">包含开学，考试，假期以及其他的重要日期</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://brocku.ca/blogs/campus-map/">
-                            <div class="item">
-                                <div class="no-logo">Campus地图</div>
-                                <div class="desc">学校的外场地图</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- 实用工具 -->
-                <div class="box">
-                    <a href="" name="tools"></a>
-                    <div class="sub-category">
-                        <div><i class="iconfont icon-tool"></i>实用工具</div>
-                    </div>
-                    <div>
-						<a target="_blank" href="https://brockhome.ca/">
-                            <div class="item">
-                                <div class="no-logo">布鲁克家园论坛</div>
-                                <div class="desc">租房，工作，交友，玩乐...</div>
-                            </div>
-                        </a>
-						<a target="_blank" href="https://bucssa.ca/">
-                            <div class="item">
-                                <div class="no-logo">BUCSSA学生会</div>
-                                <div class="desc">布鲁克大学中国学生学者联谊会</div>
-                            </div>
-                        </a>
-                        <!--
-						<a target="_blank" href="address">
-                            <div class="item">
-                                <div class="no-logo">Name</div>
-                                <div class="desc">Discribtion</div>
-                            </div>
-                        </a>
-						-->
-                    </div>
-                </div>
-
-                <footer class="footer">
-                    <div class="copyright">
-						<div>
-                            如有建议或修改请求欢迎联系我们或在 GitHub 上 Pull Requests! 
-                            <a href="https://github.com/BrockHome/BrockPortal">View on GitHub</a>
+            </section>
+            <!-- Links -->
+            <section class="item card-box" id="row-1">
+                <div class="container-fluid" id="BrockU">
+                    <div class="row">
+                        <div class="item-tit">
+                            <strong><i class="iconfont icon-tool"></i>Brock University</strong>
                         </div>
-                        <div>
-                            Copyright © 2019 
-                            <a href="https://brockhome.ca">Powered by BrockHome.ca</a>
-							. This is a Project created from 2018
+                        <div class="clearfix two-list-box">
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://lms.brocku.ca/" class="card-link" target="_blank">
+                                <div class="card-tit">Sakai登录</div>
+                                <div class="card-desc">Brock的LMS（学习管理系统）</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://adfs.brocku.ca/adfs/ls/?wa=wsignin1.0&wtrealm=urn:federation:MicrosoftOnline&wctx=bk%3D1406747354%26LoginOptions%3D3" class="card-link" target="_blank">
+                                <div class="card-tit">学生邮箱与Office Online登录</div>
+                                <div class="card-desc">Brock提供学生免费Office 365（ESL除外）</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://card.brocku.ca/" class="card-link" target="_blank">
+                                <div class="card-tit">学生卡充值与管理</div>
+                                <div class="card-desc">管理学生卡账户内的余额</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://printing.brocku.ca" class="card-link" target="_blank">
+                                <div class="card-tit">打印服务管理</div>
+                                <div class="card-desc">浏览或修改打印任务</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://careerzone.brocku.ca/login.htm" class="card-link" target="_blank">
+                                <div class="card-tit">CareerZone登录</div>
+                                <div class="card-desc">布鲁克提供的找工作平台</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://experiencebu.brocku.ca/involvement/pastevents" class="card-link" target="_blank">
+                                <div class="card-tit">ExperienceBU经历</div>
+                                <div class="card-desc">查看自己参加的社团活动</div>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brocku.ca/coronavirus/" class="card-link" target="_blank">
+                                <div class="card-tit">Brock COVID-19更新</div>
+                                <div class="card-desc-special">注意安全,减少外出</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://adfs.brocku.ca/adfs/portal/updatepassword" class="card-link" target="_blank">
+                                <div class="card-tit">修改密码</div>
+                                <div class="card-desc">修改Office账户以及My Brock密码</div>
+                                </a>
+                            </div></div></div></div></section><section class="item card-box" id="row-1">
+                <div class="container-fluid" id="MyBrock">
+                    <div class="row">
+                        <div class="item-tit">
+                            <strong><i class="iconfont icon-tool"></i>My Brock 终端</strong>
                         </div>
+                        <div class="clearfix two-list-box">
+                        <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca" class="card-link" target="_blank">
+                                <div class="card-tit">My Brock Portal</div>
+                                <div class="card-desc">布鲁克学生终端</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/reg_Declaration.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">选课</div>
+                                <div class="card-desc">注册每个学期课程</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/reg_CourseMarkInquiry.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">成绩查询</div>
+                                <div class="card-desc">你所有的成绩会显示在这里</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/reg_StudentCourseLocations.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">课程时间表</div>
+                                <div class="card-desc">你的上下课时间会显示在这里</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/fin_StudentFinancialHistory.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">学费查询</div>
+                                <div class="card-desc">查看你的学费和缴费历史记录</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/fin_StudentFinancialHistory.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">考试时间查询</div>
+                                <div class="card-desc">查看你的考试时间</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brocku.ca/webcal/" class="card-link" target="_blank">
+                                <div class="card-tit">课程日历</div>
+                                <div class="card-desc">查找某一专业所需要学习的课程</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://my.brocku.ca/BrockDB/xplus_studentExperiences_new.aspx" class="card-link" target="_blank">
+                                <div class="card-tit">学生经历</div>
+                                <div class="card-desc">查看自己志愿者小时以及其他经历</div>
+                                </a>
+                            </div></div></div></div></section><section class="item card-box" id="row-1">
+                <div class="container-fluid" id="Library">
+                    <div class="row">
+                        <div class="item-tit">
+                            <strong><i class="iconfont icon-tool"></i>图书馆相关</strong>
+                        </div>
+                        <div class="clearfix two-list-box">
+                            <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://calendar.library.brocku.ca/reserve/groupstudy" class="card-link" target="_blank">
+                                <div class="card-tit">小组自习室预约</div>
+                                <div class="card-desc">免费预约图书馆小组自习讨论室</div>
+                                </a>
+                            </div></div></div></div></section><section class="item card-box" id="row-1">
+                <div class="container-fluid" id="Official">
+                    <div class="row">
+                        <div class="item-tit">
+                            <strong><i class="iconfont icon-tool"></i>官网页面</strong>
+                        </div>
+                        <div class="clearfix two-list-box">
+                            <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brocku.ca" class="card-link" target="_blank">
+                                <div class="card-tit">Brock 官网</div>
+                                <div class="card-desc">Brock University官方网站</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brocku.ca/important-dates" class="card-link" target="_blank">
+                                <div class="card-tit">重要日期</div>
+                                <div class="card-desc">查看本学期重要日期</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brocku.ca/blogs/campus-map/" class="card-link" target="_blank">
+                                <div class="card-tit">校园地图</div>
+                                <div class="card-desc">查看交互式校园地图</div>
+                                </a>
+                            </div></div></div></div></section><section class="item card-box" id="row-1">
+                <div class="container-fluid" id="Tools">
+                    <div class="row">
+                        <div class="item-tit">
+                            <strong><i class="iconfont icon-tool"></i>实用工具</strong>
+                        </div>
+                        <div class="clearfix two-list-box">
+                            <div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://brockhome.ca" class="card-link" target="_blank">
+                                <div class="card-tit">布鲁克家园论坛</div>
+                                <div class="card-desc">租房，工作，二手，玩乐</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://bucssa.ca" class="card-link" target="_blank">
+                                <div class="card-tit">BUCSSA学生会</div>
+                                <div class="card-desc">布鲁克大学中国学生学者联谊会</div>
+                                </a>
+                            </div><div class="col-md-3 col-sm-4 col-xs-6">
+                                <a href="https://app.powerbi.com/view?r=eyJrIjoiOWM5NjBjZGItMTY3Yy00ZmM2LWI3ODEtMWUzYjAxNmY2MTBjIiwidCI6ImY4MjE0ZDNkLTk2NWMtNDhjYi1iMThiLWVkMzIzMzcyYmU0MiJ9" class="card-link" target="_blank">
+                                <div class="card-tit">尼亚加拉COVID-19官方疫情数据</div>
+                                <div class="card-desc-special">减少外出，注意安全</div>
+                                </a>
+                            </div></div></div></div></section> 
+            <!-- Footer -->
+            <footer class="footer">
+            <div class="container">
+                <div class="rwo">
+                    <div class="col-md-12">
+                    <!--
+                    布鲁克导航 https://github.com/BrockHome/BrockPortal
+                    部分代码修改自小呆导航的开源代码，遵循MIT协议，此处保留源代码的声明
+                    样式来自 https://github.com/KrunkZhou/SimpleWebNavigation
+                    由 insiderdavid.com 修改整理
+                    -->
+                        <p>
+                            Copyright © 2020 Powered by brockhome.ca . This is a Project created since 2018. <a href="https://github.com/BrockHome/BrockPortal">View on GitHub</a>
+                        </p>
                     </div>
-                </footer>
-                <div id="fixedBar"><svg class="Zi Zi--BackToTop" title="回到顶部" fill="currentColor" viewBox="0 0 24 24" width="24" height="24"><path d="M16.036 19.59a1 1 0 0 1-.997.995H9.032a.996.996 0 0 1-.997-.996v-7.005H5.03c-1.1 0-1.36-.633-.578-1.416L11.33 4.29a1.003 1.003 0 0 1 1.412 0l6.878 6.88c.782.78.523 1.415-.58 1.415h-3.004v7.005z"></path></svg></div>
-        </section>
-        <script src="https://krunk.cn/krunk/sdk/jquery_3_2_1.js"></script>
-		<script src="https://krunk.cn/krunk/sdk/krunk-design.js"></script>
-        <script>
-        var oMenu = document.getElementById('menu');
-        var oLeftBar = document.getElementById('leftBar');
-        var menuFrom = document.getElementById('menu-form');
+                </div>
+            </div>
+            </footer>
+        </div>
+    </div>
+    <div id="get-top" title="回到顶部">
+        <!--<i class="icon icon-arrow-up"></i>-->up
+    </div>
+    
+    <!-- jQuery (ZUI Require jQuery) -->
+    <script src="https://krunk.cn/krunk/sdk/jquery-3.4.1.min.js"></script>
+    <script src="https://krunk.cn/krunk/sdk/krunk-design.js"></script>
+    
+<script>
+window.onscroll = function(){
+//回到顶部
+var sllTop = document.documentElement.scrollTop||document.body.scrollTop;
+if(sllTop>240){
+  $('#get-top').css('display','block')
+}else{
+  $('#get-top').css('display','none')
+}
+}
+$('#get-top').click(function(){ 
+  $('body,html').animate({
+    scrollTop: 0
+  }, 300);//Back to top, smaller faster
+})
+//User agent
+var deviceVal  = browserRedirect();
+function browserRedirect() {
+  var sUserAgent = navigator.userAgent.toLowerCase();
+  var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+  var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+  var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+  var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+  var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+  var bIsAndroid = sUserAgent.match(/android/i) == "android";
+  var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+  var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+  if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+    return 'phone';
+  } else {
+    return 'pc';
+  }
+}
+  $('.nav-btn').on('click', function () {
+    $('.nav').toggleClass('showNav');
+    $(this).toggleClass('animated2');
+  });
+ 
+// 默认搜索引擎的内容，如果界面修改了需要同步修改
+var thisSearch = 'https://brocku.ca/search/?s#gsc.tab=0&gsc.q=';
 
-        oMenu.onclick = function() {
-            if (oLeftBar.offsetLeft == 0) {
-                oLeftBar.style.left = -249 + 'px';
-            }
-            else {
-                oLeftBar.style.left = 0;
-            }
-        }
-
-
-        // 监听页面宽度变化
-        window.onresize = function() {
-            judgeWidth();
-            // console.log(document.documentElement.clientWidth);
-        };
-
-        // 判断页面宽度
-        function judgeWidth() {
-            if (document.documentElement.clientWidth > 481) {
-                oLeftBar.style.left = 0;
-            } else {
-                oLeftBar.style.left = -249 + 'px';
-            }
-        }
-
-
-        var oNavItem = document.getElementById('navItem');
-        var aA = oNavItem.getElementsByTagName('a');
-        for (var i = 0; i < aA.length; i++) {
-            aA[i].onclick = function() {
-                for (var j = 0; j < aA.length; j++) {
-                    aA[j].className = '';
-                }
-                this.className = 'active';
-                if (oLeftBar.offsetLeft == 0) {
-                    if (document.documentElement.clientWidth <= 481) {
-                        oLeftBar.style.left = -249 + 'px';
-                        menuFrom.checked = false;
-
-                    }
-                }
-            }
-        }
-
-
-        $(window).scroll(function() {
-            if($(window).scrollTop() >= 200){
-                $('#fixedBar').fadeIn(300);
-            }else{
-                $('#fixedBar').fadeOut(300);
-            }
-        });
-        $('#fixedBar').click(function() {
-            $('html,body').animate({scrollTop:'0px'},800);
-        })
-        </script>
+$('#txt').keydown(function(ev){
+    // 回车键的处理
+    if(ev.keyCode==13){
+        window.open(thisSearch + $('#txt').val())
+        // $('#txt').val('');
+        $('#box ul').html('')
+    }
+})
+$(function(){
+  // 搜索引擎列表，样式一行五个内容，自动换行
+  var search = {
+    data: [{
+      name: 'Brock Search',
+      url: 'https://brocku.ca/search/?s#gsc.tab=0&gsc.q='
+    }, {
+      name: 'Library Omni',
+      url: 'https://ocul-bu.primo.exlibrisgroup.com/discovery/search?vid=01OCUL_BU:BU_DEFAULT&tab=Everything&search_scope=MyInst_and_CI&mode=basic&displayField=all&displayField=all&displayMode=full&bulkSize=10&highlight=true&dum=true&query=any,contains,'
+    },{
+      name: 'Google',
+      url: 'https://www.google.com/search?q='
+    }]
+  }
+  for(var i = 0; i < search.data.length; i++){
+    var addList = '<li>' + search.data[i].name + '</li>'
+    $('.search-engine-list').append(addList);
+  }
+  $('.search-engine-name, .search-engine').hover(function() {
+    $('.search-engine').css('display', 'block')
+  }, function() {
+    $('.search-engine').css('display', 'none')
+  });
+  $('.search-engine-list li').click(function() {
+    var _index = $(this).index();
+    var searchNameBtn = document.getElementById("search-engine-name");
+    searchNameBtn.innerHTML = search.data[_index].name;
+    thisSearch = search.data[_index].url;
+    $('.search-engine').css('display', 'none')
+  })
+})
+$("#search-btn").click(function(){
+  var textValue = $('#txt').val();
+  if(textValue != ''){
+    window.open(thisSearch + textValue)
+  }
+});
+</script>
+</div>
 </body>
-
 </html>
